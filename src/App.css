@@ -1,0 +1,43 @@
+/* Globals */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+}
+
+::selection {
+  /* background-color: white;
+  color: black; */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.block {
+  display: block;
+}
+
+div, input {
+  font-size: 2rem;
+}
+
+.calculation-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
