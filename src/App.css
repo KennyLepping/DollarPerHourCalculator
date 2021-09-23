@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
   background: black;
   color: white;

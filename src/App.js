@@ -1,39 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [state, setState] = useState({
-    hourlyRate: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    result: 0,
-  });
+  const [hourlyRate, setHourlyRate] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const [result, setResult] = useState(0);
 
-  function handleChange(event) {
-    const value = event.target.value;
-    setState({
-      ...state,
-      [event.target.num]: value,
-    });
-  }
-  //     let [hourlyRate, setHourlyRate] = useState();
-  //   let [hours, setHours] = useState(0);
-  //   let [minutes, setMinutes] = useState(0);
-  //   let [seconds, setSeconds] = useState(0);
-  //   let [result, setResult] = useState(0);
+  useEffect(() => {
+    let resultCalculation =
+      hourlyRate * hours +
+      hourlyRate * (minutes / 60) +
+      hourlyRate * ((seconds / 10) / 60);
 
-  //   function handleChange(event) {
-  //     setHourlyRate(event.target.value);
-  //     setHours(event.target.value);
-  //     setMinutes(event.target.value);
-  //     setSeconds(event.target.value);
-  //     let resultCalculation = 0;
-  //     resultCalculation =
-  //       hourlyRate * hours +
-  //       (hourlyRate * (minutes / 60) + hourlyRate * ((seconds * 0.1) / 60));
-  //     setResult(resultCalculation);
-  //   }
+    //    let convertToSeconds = (hours * 3600) + (minutes * 60) + (seconds / 10)
+    //    console.log(`convertToSeconds: ${convertToSeconds}`)
+    //    let ratePerSecond = hourlyRate / 3600
+    //    console.log(`ratePerSeconds: ${ratePerSecond}`)
+
+    setResult(resultCalculation.toFixed(2));
+    // setResult((convertToSeconds * ratePerSecond).toFixed(2));
+  }, [hourlyRate, hours, minutes, seconds, result]);
 
   return (
     <>
@@ -44,52 +32,43 @@ function App() {
               Hours
               <input
                 className="block"
-                type="text"
+                type="number"
                 name="hours"
-                value={state.hours}
-                onChange={handleChange}
+                defaultValue={hours || ""}
+                onChange={(e) => setHours(e.target.value)}
               />
             </div>
             <div>
               Minutes
               <input
                 className="block"
-                type="text"
+                type="number"
                 name="minutes"
-                value={state.minutes}
-                onChange={handleChange}
+                value={minutes || ""}
+                onChange={(e) => setMinutes(e.target.value)}
               />
             </div>
             <div>
               Seconds
               <input
                 className="block"
-                type="text"
+                type="number"
                 name="seconds"
-                value={state.seconds}
-                onChange={handleChange}
+                value={seconds || ""}
+                onChange={(e) => setSeconds(e.target.value)}
               />
             </div>
             <div>
               Hourly Rate
               <input
                 className="block"
-                type="text"
+                type="number"
                 name="hourlyRate"
-                value={state.hourlyRate}
-                onChange={handleChange}
+                defaultValue={hourlyRate || ""}
+                onChange={(e) => setHourlyRate(e.target.value)}
               />
             </div>
-            <div>
-              Result
-              <input
-                className="block"
-                type="text"
-                name="result"
-                value={state.result}
-                onChange={handleChange}
-              />
-            </div>
+            <div>Result: {result}</div>
           </form>
         </section>
       </main>
