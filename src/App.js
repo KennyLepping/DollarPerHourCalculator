@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import lightThemeBtn from "./assets/icons8-sun-96.png"
+import darkThemeBtn from "./assets/icons8-moon-64.png"
+import DarkMode from "./components/DarkMode"
 import "./App.css";
 
 function App() {
@@ -28,43 +31,43 @@ function App() {
       <header>
         <nav>
           <span className="title-text">Dollar Per Hour&nbsp;</span>Calculator
+          <span className="theme-switcher"><DarkMode /></span>
         </nav>
       </header>
       <main>
-          <form className="form-styling">
-            <label className="input-name">Hours</label>
-            <input
-              className="block number-input"
-              type="number"
-              defaultValue={hours || ""}
-              onChange={(e) => setHours(e.target.value)}
-            />
-            <label className="input-name">Minutes</label>
-            <input
-              className="block number-input"
-              type="number"
-              value={minutes || ""}
-              onChange={(e) => setMinutes(e.target.value)}
-            />
-            <label className="input-name">Seconds</label>
-            <input
-              className="block number-input"
-              type="number"
-              value={seconds || ""}
-              onChange={(e) => setSeconds(e.target.value)}
-            />
-            <hr />
-            <label className="hourly-rate">Hourly Rate</label>
-            <input
-              className="block number-input"
-              type="number"
-              defaultValue={hourlyRate || ""}
-              onChange={(e) => setHourlyRate(e.target.value)}
-            />
-            <div className="result">
-              Result: <span className="green-text">${result}</span>
-            </div>
-          </form>
+        <form className="form-styling">
+          <label className="input-name">Hours</label>
+          <input
+            className="block number-input"
+            type="number"
+            onChange={(e) => setHours(e.target.value)}
+          />
+          <label className="input-name">Minutes</label>
+          <input
+            className="block number-input"
+            type="number"
+            onChange={(e) => setMinutes(e.target.value)}
+          />
+          <label className="input-name">Seconds</label>
+          <input
+            className="block number-input"
+            type="number"
+            onChange={(e) => setSeconds(e.target.value)}
+          />
+          <hr />
+          <label className="hourly-rate">Hourly Rate</label>
+          <input
+            className="block number-input"
+            type="number"
+            onChange={(e) => setHourlyRate(e.target.value)}
+          />
+          <div className="result">
+            Result:{" "}
+            <span style={result > 0 ? { color: "rgb(0, 255, 0)" } : {}}>
+              ${result}
+            </span>
+          </div>
+        </form>
       </main>
       <footer>
         Built by&nbsp;<a href="#">Kenny Lepping</a>

@@ -8,6 +8,35 @@
 
 :root {
   font-size: 10px;
+  --black: rgb(29, 29, 29);
+  --darker-black: rgb(20, 20, 20);
+  --white: white;
+  --darker-white: rgb(236, 236, 236);
+  --dark-box-shadow: rgb(27 27 27);
+  --light-box-shadow: rgb(224 224 224);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100%;
+
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out, color 0.6s ease-in-out;
+}
+
+body.light {
+  --background-color: var(--darker-white);
+  --text-color: var(--black);
+  --secondary-bg-color: var(--white);
+  --box-shadow-color: var(--light-box-shadow)
+}
+
+body.dark {
+  --background-color: var(--black);
+  --text-color: var(--white);
+  --secondary-bg-color: var(--darker-black);
+  --box-shadow-color: var(--dark-box-shadow)
 }
 
 ::selection {
@@ -24,13 +53,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-body {
-  background: rgb(29, 29, 29);
-  color: white;
-  font-family: "Open Sans", sans-serif;
-  height: 100%;
-}
-
 .block {
   display: block;
 }
@@ -44,7 +66,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 80px - 40px);
+  min-height: calc(100vh - 80px - 60px);
 }
 
 form > label {
@@ -59,15 +81,20 @@ form > label {
 .number-input {
   margin-bottom: 25px;
   width: 100%;
-  background: rgb(39, 39, 39);
+  background: var(--secondary-bg-color);
+  color: var(--text-color);
   border: black solid 1px;
-  color: white;
   border-radius: 5px;
   padding: 10px;
+  transition: all 0.2s;
 }
 
-.number-input:focus {
+.number-input:hover,
+:focus {
   outline: none;
+  border: rgb(75, 75, 75) solid 1px;
+  border-radius: 10px;
+  background: var(--background-color);
 }
 
 .hourly-rate {
@@ -75,11 +102,15 @@ form > label {
 }
 
 .form-styling {
-  background: rgb(20, 20, 20);
+  background: var(--secondary-bg-color);
   padding: 20px;
   max-width: 600px;
   width: 100%;
   border-radius: 25px;
+  box-shadow: var(--box-shadow-color) -1px 3px 8px 5px inset, rgb(0 0 0) 2px 5px 16px 0px,
+    5px 5px 15px 5px rgb(255 0 119 / 0%);
+  -webkit-box-shadow: var(--box-shadow-color) -1px 3px 8px 5px inset,
+    rgb(0 0 0) 2px 5px 16px 0px, 5px 5px 15px 5px rgb(255 0 119 / 0%);
 }
 
 hr {
@@ -99,7 +130,7 @@ hr {
 
 nav {
   height: 80px;
-  background: rgb(20, 20, 20);
+  background: var(--secondary-bg-color);
   font-size: 4.8rem;
   display: flex;
   justify-content: center;
@@ -108,7 +139,7 @@ nav {
 
 footer {
   height: 60px;
-  background: rgb(20, 20, 20);
+  background: var(--secondary-bg-color);
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -127,4 +158,9 @@ footer > a {
   background: linear-gradient(to left, #2432ff 0%, #bacdff 72%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.theme-switcher {
+  position: absolute;
+  right: 4%;
 }
