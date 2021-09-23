@@ -56,3 +56,4 @@ export default function Main() {
 
 /* TODO: Page loads weird for some reason
  and light mode may flash when loading if in dark mode */
+// TODO: Fix mobile and theme change bug
