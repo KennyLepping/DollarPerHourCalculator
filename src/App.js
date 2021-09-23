@@ -12,7 +12,7 @@ function App() {
     let resultCalculation =
       hourlyRate * hours +
       hourlyRate * (minutes / 60) +
-      hourlyRate * (seconds / 60  / 60);
+      hourlyRate * (seconds / 60 / 60);
 
     setResult(resultCalculation.toFixed(2));
 
@@ -25,8 +25,12 @@ function App() {
 
   return (
     <>
+      <header>
+        <nav>
+          <span className="title-text">Dollar Per Hour&nbsp;</span>Calculator
+        </nav>
+      </header>
       <main>
-        <section className="calculation-section">
           <form className="form-styling">
             <label className="input-name">Hours</label>
             <input
@@ -57,10 +61,14 @@ function App() {
               defaultValue={hourlyRate || ""}
               onChange={(e) => setHourlyRate(e.target.value)}
             />
-            <div className="result">Result: <span className="green-text">{result}</span></div>
+            <div className="result">
+              Result: <span className="green-text">${result}</span>
+            </div>
           </form>
-        </section>
       </main>
+      <footer>
+        Built by&nbsp;<a href="#">Kenny Lepping</a>
+      </footer>
     </>
   );
 }
