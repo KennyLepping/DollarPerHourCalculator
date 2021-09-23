@@ -53,3 +53,6 @@ export default function Main() {
     </main>
   );
 }
+
+/* TODO: Page loads weird for some reason
+ and light mode may flash when loading if in dark mode */
