@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/DollarPerHourCalculator/static/css/main.5a24439f.chunk.css",
+    "main.js": "/DollarPerHourCalculator/static/js/main.91487094.chunk.js",
+    "main.js.map": "/DollarPerHourCalculator/static/js/main.91487094.chunk.js.map",
+    "runtime-main.js": "/DollarPerHourCalculator/static/js/runtime-main.34805d30.js",
+    "runtime-main.js.map": "/DollarPerHourCalculator/static/js/runtime-main.34805d30.js.map",
+    "static/js/2.c7770a5c.chunk.js": "/DollarPerHourCalculator/static/js/2.c7770a5c.chunk.js",
+    "static/js/2.c7770a5c.chunk.js.map": "/DollarPerHourCalculator/static/js/2.c7770a5c.chunk.js.map",
+    "static/js/3.9151dbfb.chunk.js": "/DollarPerHourCalculator/static/js/3.9151dbfb.chunk.js",
+    "static/js/3.9151dbfb.chunk.js.map": "/DollarPerHourCalculator/static/js/3.9151dbfb.chunk.js.map",
+    "index.html": "/DollarPerHourCalculator/index.html",
+    "static/css/main.5a24439f.chunk.css.map": "/DollarPerHourCalculator/static/css/main.5a24439f.chunk.css.map",
+    "static/js/2.c7770a5c.chunk.js.LICENSE.txt": "/DollarPerHourCalculator/static/js/2.c7770a5c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.34805d30.js",
+    "static/js/2.c7770a5c.chunk.js",
+    "static/css/main.5a24439f.chunk.css",
+    "static/js/main.91487094.chunk.js"
+  ]
+}
