@@ -1,12 +1,9 @@
 import React from "react";
-import "../css/DarkMode.css";
+import "../App.css";
 
 export default function DarkMode() {
   let clickedClass = "clicked";
   const body = document.body;
-  const nav = document.querySelector("nav")
-  const footer = document.querySelector("footer")
-  const form = document.querySelector("form")
   const lightTheme = "light";
   const darkTheme = "dark";
   let theme;
