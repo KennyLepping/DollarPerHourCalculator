@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import DarkMode from "./components/DarkMode";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";

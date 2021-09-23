@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-export default function DarkMode() {
+export default function ThemeSwitcher() {
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";

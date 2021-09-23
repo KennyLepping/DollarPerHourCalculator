@@ -136,10 +136,6 @@ hr {
   font-size: 4rem;
 }
 
-.green-text {
-  color: rgb(0, 186, 0);
-}
-
 nav {
   height: 80px;
   background: var(--secondary-bg-color);
@@ -160,8 +156,6 @@ footer {
 
 footer > a {
   color: var(--footer-link-color);
-  /* color: #838bff; */
-  /* color: #2433ff; */
   text-decoration: underline;
 }
 

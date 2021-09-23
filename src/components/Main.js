@@ -45,7 +45,7 @@ export default function Main() {
         />
         <div className="result">
           Result:{" "}
-          <span style={result > 0 ? { color: "rgb(0, 255, 0)" } : {}}>
+          <span style={result > 0 ? { color: "rgb(0, 186, 0)" } : {}}>
             ${result}
           </span>
         </div>
