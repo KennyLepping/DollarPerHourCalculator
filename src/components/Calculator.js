@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Main() {
+export default function Calculator() {
   const [hourlyRate, setHourlyRate] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -16,8 +16,7 @@ export default function Main() {
     setResult(resultCalculation.toFixed(2));
   }, [hourlyRate, hours, minutes, seconds, result]);
   return (
-    <main>
-      <form className="form-styling">
+      <form className="calculator">
         <label className="input-name">Hours</label>
         <input
           className="block number-input"
@@ -50,7 +49,6 @@ export default function Main() {
           </span>
         </div>
       </form>
-    </main>
   );
 }
 

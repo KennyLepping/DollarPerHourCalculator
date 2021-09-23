@@ -1,40 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import lightThemeIcon from "../assets/icons8-sun-96.png";
+import darkThemeIcon from "../assets/icons8-moon-64.png";
 import "../App.css";
 
 export default function ThemeSwitcher() {
-  let clickedClass = "clicked";
+  const [iconImage, setIconImage] = useState(darkThemeIcon);
+  const [darkTheme, setDarkTheme] = useState(false);
   const body = document.body;
-  const lightTheme = "light";
-  const darkTheme = "dark";
-  let theme;
 
-  if (localStorage) {
-    theme = localStorage.getItem("theme");
-  }
-
-  if (theme === lightTheme || theme === darkTheme) {
-    body.classList.add(theme);
+  if (darkTheme) {
+    body.classList.add("dark");
   } else {
-    body.classList.add(darkTheme);
+    body.classList.remove("dark");
   }
 
-  const switchTheme = (e) => {
-    if (theme === darkTheme) {
-      body.classList.replace(darkTheme, lightTheme);
-      e.target.classList.remove(clickedClass);
-      localStorage.setItem("theme", "light");
-      theme = lightTheme;
+  const switchTheme = () => {
+    if (darkTheme) {
+      body.classList.remove("dark");
+      setIconImage(darkThemeIcon);
+      setDarkTheme(false);
     } else {
-      body.classList.replace(lightTheme, darkTheme);
-      e.target.classList.add(clickedClass);
-      localStorage.setItem("theme", "dark");
-      theme = darkTheme;
+      body.classList.add("dark");
+      setIconImage(lightThemeIcon);
+      setDarkTheme(true);
     }
   };
 
   return (
     <button
-      className={theme === "dark" ? clickedClass : ""}
+      className="theme-switcher"
+      style={{ backgroundImage: `url('${iconImage}')` }}
       id="darkMode"
       onClick={(e) => switchTheme(e)}
     ></button>

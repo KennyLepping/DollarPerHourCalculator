@@ -8,46 +8,69 @@
 
 :root {
   font-size: 10px;
+
+  /* Colors */
   --black: rgb(29, 29, 29);
   --darker-black: rgb(20, 20, 20);
   --white: white;
   --darker-white: rgb(236, 236, 236);
+  --purple: #2432ff;
+  --purple-slightly-lighter: #303eff;
+  --purple-light: #838bff;
+  --purple-superlight: #838bff;
+
+  /* Theme Colors */
+  --primary: var(--purple);
+  --primary-light: var(--purple-light);
+  --primary-superlight: var(--purple-superlight);
+
+  --primary-bg: white;
+  --secondary-bg: var(--darker-white);
+  --text-color: black;
+
   --dark-box-shadow: rgb(27 27 27);
   --light-box-shadow: rgb(224 224 224);
+  --box-shadow-color: var(--light-box-shadow);
+
   --dark-mode-title: #bacdff;
   --light-mode-footer: #2432ff;
   --dark-mode-footer: #838bff;
-  --light-mode-button: url("./assets/icons8-sun-96.png");
-  --dark-mode-button: url("./assets/icons8-moon-64.png");
   --bottom-shadow-light: rgb(81 81 81);
   --bottom-shadow-dark: rgb(0 0 0);
+  --bottom-shadow: var(--bottom-shadow-light);
 }
 
 body {
   font-family: "Open Sans", sans-serif;
-  height: 100%;
-
-  background: var(--background-color);
+  background: var(--secondary-bg);
   color: var(--text-color);
-  transition: all 0.3s ease-in-out, color 0.6s ease-in-out;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-body.light {
-  --background-color: var(--darker-white);
-  --text-color: var(--black);
-  --secondary-bg-color: var(--white);
-  --box-shadow-color: var(--light-box-shadow);
-  --title-first-color: var(--black);
-  --footer-link-color: var(--light-mode-footer);
-  --button-image: var(--dark-mode-button);
-  --theme-switcher-size: 30px 30px;
-  --bottom-shadow: var(--bottom-shadow-light);
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px - 60px);
 }
 
-body.dark {
-  --background-color: var(--black);
+a {
+  color: var(--primary);
+}
+
+hr {
+  border: none;
+  background: gray;
+  color: gray;
+  height: 1px;
+}
+
+/* Themes */
+
+.dark {
+  --primary-bg: var(--darker-black);
+  --secondary-bg: var(--black);
   --text-color: var(--white);
-  --secondary-bg-color: var(--darker-black);
   --box-shadow-color: var(--dark-box-shadow);
   --title-first-color: var(--dark-mode-title);
   --footer-link-color: var(--dark-mode-footer);
@@ -56,29 +79,84 @@ body.dark {
   --bottom-shadow: var(--bottom-shadow-dark);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.theme-switcher {
+  --size: 30px 30px; /* The sun is 40px 40px */
+  position: absolute;
+  background: no-repeat center;
+  background-size: var(--size);
+  width: 45px;
+  height: 45px;
+  top: 1.3%;
+  right: 4%;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.dark .theme-switcher {
+  --size: 40px 40px;
+}
+
+.theme-switcher:hover,
+.theme-switcher:focus {
+  filter: none;
+  cursor: pointer;
+}
+
+/* Utilities */
+
+.block {
+  display: block;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+/* Navbar */
+
+.navbar {
+  height: 80px;
+  background: var(--primary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-logo {
+  font-size: 4.8rem;
+  transition: color 0.2s ease;
+}
+
+@media screen and (max-width: 750px) {
+  .navbar {
+    font-size: 3.3rem;
+  }
+}
+
+/* Forms */
+
+.calculator {
+  background: var(--primary-bg);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: var(--box-shadow-color) -1px 3px 8px 5px inset,
+    var(--bottom-shadow) 2px 5px 16px 0px, 5px 5px 15px 5px rgb(255 0 119 / 0%);
+  -webkit-box-shadow: var(--box-shadow-color) -1px 3px 8px 5px inset,
+    var(--bottom-shadow) 2px 5px 16px 0px, 5px 5px 15px 5px rgb(255 0 119 / 0%);
+  transition: box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.block {
-  display: block;
-}
-
 label,
 input {
   font-size: 2rem;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 80px - 60px);
 }
 
 form > label {
@@ -93,12 +171,13 @@ form > label {
 .number-input {
   margin-bottom: 25px;
   width: 100%;
-  background: var(--background-color);
+  background: var(--secondary-bg);
   color: var(--text-color);
   border: black solid 1px;
   border-radius: 5px;
   padding: 10px;
-  transition: all 0.2s;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease,
+    border 0.2s ease, border-radius 0.2s ease;
 }
 
 .number-input:hover,
@@ -106,94 +185,25 @@ form > label {
   outline: none;
   border: rgb(75, 75, 75) solid 1px;
   border-radius: 10px;
-  background: var(--secondary-bg-color);
+  background-color: var(--primary-bg);
 }
 
 .hourly-rate {
   margin: 15px 0 10px 0;
 }
 
-.form-styling {
-  background: var(--secondary-bg-color);
-  padding: 20px;
-  max-width: 600px;
-  width: 100%;
-  border-radius: 25px;
-  box-shadow: var(--box-shadow-color) -1px 3px 8px 5px inset,
-    var(--bottom-shadow) 2px 5px 16px 0px, 5px 5px 15px 5px rgb(255 0 119 / 0%);
-  -webkit-box-shadow: var(--box-shadow-color) -1px 3px 8px 5px inset,
-    var(--bottom-shadow) 2px 5px 16px 0px, 5px 5px 15px 5px rgb(255 0 119 / 0%);
-}
-
-hr {
-  border: none;
-  background: gray;
-  color: gray;
-  height: 1px;
-}
-
 .result {
   font-size: 4rem;
 }
 
-nav {
-  height: 80px;
-  background: var(--secondary-bg-color);
-  font-size: 4.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Footer */
 
 footer {
   height: 60px;
-  background: var(--secondary-bg-color);
+  background: var(--primary-bg);
   font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-footer > a {
-  color: var(--footer-link-color);
-  text-decoration: underline;
-}
-
-.title-text {
-  color: #303eff;
-}
-
-.theme-switcher {
-  position: absolute;
-  top: 1.3%;
-  right: 4%;
-}
-
-#darkMode {
-  background: transparent var(--button-image) no-repeat center;
-  background-size: var(--theme-switcher-size);
-  width: 45px;
-  height: 45px;
-  filter: grayscale(100%);
-  border: none;
-  border-radius: 50%;
-  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-#darkMode:hover,
-#darkMode:focus {
-  filter: none;
-  cursor: pointer;
-}
-
-#darkMode.clicked {
-  filter: none !important;
-}
-
-/* Media Queries */
-
-@media screen and (max-width: 750px) {
-  nav {
-    font-size: 3.3rem;
-  }
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
