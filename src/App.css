@@ -25,7 +25,7 @@ input[type=number] {
 }
 
 body {
-  background: black;
+  background: rgb(29, 29, 29);
   color: white;
   font-family: "Open Sans", sans-serif;
 }
@@ -34,7 +34,7 @@ body {
   display: block;
 }
 
-div, input {
+label, input {
   font-size: 2rem;
 }
 
@@ -44,4 +44,53 @@ div, input {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+form > label {
+  display: inline-block;
+}
+
+.input-name {
+  margin-bottom: 10px;
+}
+
+.number-input {
+  margin-bottom: 25px;
+  width: 100%;
+  background: rgb(39, 39, 39);
+  border: black solid 1px;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.number-input:focus {
+  outline: none;
+}
+
+.hourly-rate {
+  margin: 15px 0 5px 0;
+}
+
+.form-styling {
+  background: rgb(20, 20, 20);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+hr {
+  border: none;
+  background: gray;
+  color: gray;
+  height: 1px;
+}
+
+.result {
+  font-size: 3.6rem;
+}
+
+.green-text {
+    color: rgb(0, 255, 0);
 }
