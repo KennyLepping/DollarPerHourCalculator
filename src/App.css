@@ -207,3 +207,71 @@ footer {
   align-items: center;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+/* Hide short text by default (resolution > 1200px) */
+.short-text {
+  display: none;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 700px) and (min-width: 650px) {
+  .theme-switcher,
+  .dark .theme-switcher {
+    right: 1%;
+    top: 1.5%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .theme-switcher {
+    --size: 35px 35px;
+  }
+  .theme-switcher,
+  .dark .theme-switcher {
+    --size: 30px 30px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) and (min-width: 425px) {
+  .theme-switcher,
+  .dark .theme-switcher {
+    top: 1.3%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .short-text {
+    display: inline-block;
+    font-size: 3.6rem;
+  }
+  .full-text {
+    display: none;
+  }
+  .theme-switcher,
+  .dark .theme-switcher {
+    top: 1.3%;
+    right: 4%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .theme-switcher,
+  .dark .theme-switcher {
+    top: 1.7%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .short-text {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .short-text {
+    font-size: 2.8rem;
+  }
+}

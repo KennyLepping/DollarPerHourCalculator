@@ -4,8 +4,8 @@ import darkThemeIcon from "../assets/icons8-moon-64.png";
 import "../App.css";
 
 export default function ThemeSwitcher() {
-  const [iconImage, setIconImage] = useState(darkThemeIcon);
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [iconImage, setIconImage] = useState(lightThemeIcon);
+  const [darkTheme, setDarkTheme] = useState(true);
   const body = document.body;
 
   if (darkTheme) {
