@@ -275,3 +275,10 @@ footer {
     font-size: 2.8rem;
   }
 }
+
+@media screen and (max-height: 813px) {
+  .theme-switcher,
+  .dark .theme-switcher {
+    top: 2.3%;
+  }
+}
