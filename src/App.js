@@ -4,8 +4,8 @@ import Calculator from "./components/Calculator";
 import Footer from "./components/Footer";
 import "./App.css";
 
-function App() {
-  return (
+function App() { 
+    return (
     <>
       <NavBar />
       <main>

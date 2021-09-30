@@ -44,7 +44,7 @@ body {
   font-family: "Open Sans", sans-serif;
   background: var(--secondary-bg);
   color: var(--text-color);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 main {
@@ -70,7 +70,7 @@ hr {
 .dark {
   --primary-bg: var(--darker-black);
   --secondary-bg: var(--black);
-  --text-color: var(--white);
+  /* --text-color: var(--white); */
   --box-shadow-color: var(--dark-box-shadow);
   --title-first-color: var(--dark-mode-title);
   --footer-link-color: var(--dark-mode-footer);
@@ -121,12 +121,11 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .navbar-logo {
   font-size: 4.8rem;
-  transition: color 0.2s ease;
 }
 
 @media screen and (max-width: 750px) {
@@ -147,7 +146,7 @@ hr {
     var(--bottom-shadow) 2px 5px 16px 0px, 5px 5px 15px 5px rgb(255 0 119 / 0%);
   -webkit-box-shadow: var(--box-shadow-color) -1px 3px 8px 5px inset,
     var(--bottom-shadow) 2px 5px 16px 0px, 5px 5px 15px 5px rgb(255 0 119 / 0%);
-  transition: box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 input[type="number"] {
@@ -176,8 +175,8 @@ form > label {
   border: black solid 1px;
   border-radius: 5px;
   padding: 10px;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease,
-    border 0.2s ease, border-radius 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, border 0.2s ease,
+    border-radius 0.2s ease;
 }
 
 .number-input:hover,
@@ -205,7 +204,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 /* Hide short text by default (resolution > 650px) */
