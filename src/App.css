@@ -169,7 +169,6 @@ form > label {
   margin-bottom: 25px;
   width: 100%;
   background: var(--secondary-bg);
-  color: var(--text-color);
   border: black solid 1px;
   border-radius: 5px;
   padding: 10px;
