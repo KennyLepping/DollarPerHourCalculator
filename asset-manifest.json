@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/DollarPerHourCalculator/static/css/main.4944d6f4.chunk.css",
-    "main.js": "/DollarPerHourCalculator/static/js/main.765e0476.chunk.js",
-    "main.js.map": "/DollarPerHourCalculator/static/js/main.765e0476.chunk.js.map",
+    "main.js": "/DollarPerHourCalculator/static/js/main.485a171b.chunk.js",
+    "main.js.map": "/DollarPerHourCalculator/static/js/main.485a171b.chunk.js.map",
     "runtime-main.js": "/DollarPerHourCalculator/static/js/runtime-main.8ab57738.js",
     "runtime-main.js.map": "/DollarPerHourCalculator/static/js/runtime-main.8ab57738.js.map",
     "static/js/2.c55dec0b.chunk.js": "/DollarPerHourCalculator/static/js/2.c55dec0b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8ab57738.js",
     "static/js/2.c55dec0b.chunk.js",
     "static/css/main.4944d6f4.chunk.css",
-    "static/js/main.765e0476.chunk.js"
+    "static/js/main.485a171b.chunk.js"
   ]
 }
