@@ -22,7 +22,7 @@ export default function ThemeSwitcher() {
       duration: 200,
     });
     colorTL.add({
-      targets: "body",
+      targets: "body, .number-input",
       color: bodyColor,
     });
     colorTL.add({
