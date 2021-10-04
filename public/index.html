@@ -14,6 +14,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="Web site created using create-react-app" />
+        <script>
+            // Refer to https://stackoverflow.com/questions/32963400/android-keyboard-shrinking-the-viewport-and-elements-using-unit-vh-in-css
+            var viewport = document.querySelector("meta[name=viewport]");
+            viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+        </script>
+
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <!--
       manifest.json provides metadata used when your web app is installed on a
